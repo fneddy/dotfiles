@@ -1,0 +1,4 @@
+bleopt filename_ls_colors="$LS_COLORS"
+bleopt history_share=1
+bleopt editor=vim
+

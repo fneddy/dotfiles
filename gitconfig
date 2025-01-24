@@ -1,0 +1,37 @@
+[user]
+	name = Eddy S.
+	email = fneddy@users.noreply.github.com
+[core]
+	excludesfile = /home/eddy/.gitignore
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[url "https://invent.kde.org/"]
+	insteadOf = kde:
+[url "ssh://git@invent.kde.org/"]
+	pushInsteadOf = kde:
+[commit]
+	template = /home/eddy/.gitmessage
+[format]
+	coverLetter = auto
+[sendemail]
+        smtpserver = emea.relay.ibm.com
+        smtpsslcertpath = /etc/ssl/certs
+#       smtpencryption = tls
+        from = Eduard Stefes <eduard.stefes@ibm.com>
+        envelopeSender = auto
+        suppresscc = all
+        confirm = always
+        validate = yes
+        assume8bitencoding = UTF-8
+        aliasfiletype = mailrc
+	aliasesfile = ~/.gitaliases
+
+[core]
+	editor = vim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

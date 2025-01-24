@@ -1,0 +1,6 @@
+__*__*
+*.swp
+*.orig
+*.srctrlbm
+*.srctrldb
+.gitignore
