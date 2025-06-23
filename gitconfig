@@ -1,6 +1,6 @@
 [user]
-	name = Eddy S.
-	email = fneddy@users.noreply.github.com
+	name = Eddy (Eduard) Stefes
+	email = eduard.stefes@ibm.com
 [core]
 	excludesfile = /home/eddy/.gitignore
 [init]
@@ -12,7 +12,7 @@
 [url "ssh://git@invent.kde.org/"]
 	pushInsteadOf = kde:
 [commit]
-	template = /home/eddy/.gitmessage
+#	template = /home/eddy/.gitmessage
 [format]
 	coverLetter = auto
 [sendemail]
@@ -35,3 +35,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[merge]
+	tool = meld
