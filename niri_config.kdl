@@ -72,10 +72,10 @@ input {
 // Remember to uncomment the node by removing "/-"!
 output "eDP-1" {
 	position x=0 y=0
-	scale 2.5
+	scale 2
 }
 output "DP-2" {
-	position x=1536 y=0
+	//	position x=1536 y=0
 }
 /-output "eDP-1" {
     // Uncomment this line to disable this output.
@@ -264,17 +264,28 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "xwayland-satellite"
+spawn-at-startup "nm-applet"
+// spawn-at-startup "xwayland-satellite"
 spawn-at-startup "udiskie"
-spawn-at-startup "swayidle -w
-	timeout 300 'swaylock -f -c 000000 -k -l'
-	timeout 600 'niri msg action power-off-monitors'
-	resume 'niri msg action power-on-monitors'
-	before-sleep 'swaylock -f -c 000000 -k -l'"
+spawn-at-startup "mako"
+spawn-at-startup "bash" "-c" "swayidle -w timeout 300 'swaylock -f -c 000000 -k -l && niri msg action power-off-monitors' before-sleep 'swaylock -f -c 000000 -k -l'"
 
 
 environment {
 	DISPLAY ":0"
+	_JAVA_AWT_WM_NONREPARENTING "1"
+}
+
+workspace "chat" {
+	open-on-output "eDP-1"
+}
+
+workspace "dev" {
+	open-on-output "DP-2"
+}
+
+workspace "stat" {
+	open-on-output "eDP-1"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -308,15 +319,19 @@ animations {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
 window-rule {
-	match app-id="Slack"
-	shadow {
-		off
-	}
+	match app-id=r#"^com\.slack\.Slack$"#
+	open-on-workspace "chat"
 }
 
 window-rule {
 	match app-id="Alacritty"
 	open-maximized true
+	open-on-workspace "dev"
+}
+
+window-rule {
+	match app-id="org.gnome.Evolution"
+	open-on-workspace "chat"
 }
 
 // Work around WezTerm's initial configure bug
@@ -391,6 +406,8 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
+    Alt+Tab repeat=false { toggle-overview; }
+    Mod+Tab repeat=false { toggle-overview; }
     Mod+O repeat=false { toggle-overview; }
 
     Mod+Q { close-window; }
