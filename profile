@@ -3,4 +3,7 @@ do
 	source $f
 done
 
-if [ -e /home/eddy/.nix-profile/etc/profile.d/nix.sh ]; then . /home/eddy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+tmux has-session -t eddy
+if [ "$?" -eq "0" ] && [ -z "$TMUX" ] && [ "$TERM_PROGRAM" != "vscode" ] ; then
+	tmux at -t eddy
+fi
