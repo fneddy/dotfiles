@@ -19,7 +19,7 @@
         smtpserver = emea.relay.ibm.com
         smtpsslcertpath = /etc/ssl/certs
 #       smtpencryption = tls
-        from = Eduard Stefes <eduard.stefes@ibm.com>
+        from = Eduard Stefes <eddy@linux.ibm.com>
         envelopeSender = auto
         suppresscc = all
         confirm = always
