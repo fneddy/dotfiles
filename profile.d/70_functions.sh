@@ -24,3 +24,8 @@ alias pushkey=pushkey_function
 
 
 alias pdrun='podman run -v$PWD:$PWD:z -v$HOME/.bash_history:/root/.bash_history:z -v$HOME/.profile:/root/.profile:z -v$HOME/.profile.d/:/root/.profile.d/:z -v$HOME/.bashrc:/root/.bashrc:z'
+
+update_env() {
+	eval $(tmux show-environment -s | grep -v '^-')
+}
+
