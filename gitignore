@@ -5,3 +5,5 @@ __*__*
 *.srctrldb
 .gitignore
 .cache
+.gdb_historytarget
+target

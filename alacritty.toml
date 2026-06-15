@@ -8,31 +8,33 @@ dynamic_padding = true
 decorations = "None"
 startup_mode = "Maximized"
 
+# Colors (Ayu Mirage)
+
+# Default Colors
 [colors.primary]
-foreground = "#F3F2CC"
-background = "#232323"
+background = "#1f2430"
+foreground = "#cbccc6"
+bright_foreground = "#f28779"
 
-[colors.cursor]
-text = "#232323"
-cursor = "#F3F2CC"
-
+# Normal colors
 [colors.normal]
-black = "#212121"
-red = "#F05E48"
-green = "#99be70"
-yellow = "#FAD566"
-blue = "#86c1b9"
-magenta = "#cfba8b"
-cyan = "#72a59e"
-white = "#c8c8c8"
+black = "#212733"
+red = "#f08778"
+green = "#53bf97"
+yellow = "#fdcc60"
+blue = "#60b8d6"
+magenta = "#ec7171"
+cyan = "#98e6ca"
+white = "#fafafa"
 
+# Bright colors
 [colors.bright]
-black = "#404040"
-red = "#F05E48"
-green = "#99be70"
-yellow = "#ffff9f"
-blue = "#86c1b9"
-magenta = "#cfba8b"
-cyan = "#72a59e"
-white = "#e8e8e8"
+black = "#686868"
+red = "#f58c7d"
+green = "#58c49c"
+yellow = "#ffd165"
+blue = "#65bddb"
+magenta = "#f17676"
+cyan = "#9debcf"
+white = "#ffffff"
 
